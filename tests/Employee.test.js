@@ -4,7 +4,7 @@ describe("Employee", () => {
 
   describe("Initialization", () => {
     it("should return an object containing a 'profile' property when called with the 'new' keyword", () => {
-      const obj = new Employee("employeeName", "ID", "emailAddress", "profile", "office number");
+      const obj = new Employee("name", "ID", "email", "office number");
 
       expect("profile" in obj).toEqual(true);
     });
@@ -13,7 +13,7 @@ describe("Employee", () => {
     describe("Get Role", () => {
     it("should return an object containing a 'role' property that matches 'Employee'", () => {
       
-        const obj = new Employee("employeeName", "ID", "emailAddress", "profile", "office number");
+        const obj = new Employee("name", "ID", "email", "office number");
 
       const role = obj.getRole();
 
@@ -22,12 +22,12 @@ describe("Employee", () => {
     });
 
     describe("Name", () => {
-    it("should return an object containing 'employeeName' property that matches 'employeeName'", () => {
+    it("should return an object containing 'name' property that matches 'name'", () => {
       
-        const obj = new Employee("employeeName", "ID", "emailAddress", "profile", "office number") ;
-        const Name = obj.employeeName;
+        const obj = new Employee("name", "ID", "email", "office number") ;
+        const Name = obj.name;
 
-      expect(Name).toEqual("employeeName");
+      expect(Name).toEqual("name");
     });
 
     });

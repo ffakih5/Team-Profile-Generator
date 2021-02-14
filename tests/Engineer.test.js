@@ -1,10 +1,10 @@
-const Engineer = require("../lib/Employee.js");
+const Engineer = require("../lib/Engineer.js");
 
 describe("Engineer", () => {
 
   describe("Initialization", () => {
     it("should return an object containing a 'profile' property when called with the 'new' keyword", () => {
-      const obj = new Engineer("employeeName", "ID", "emailAddress", "profile", "Github");
+      const obj = new Engineer("name", "ID", "email", "Github Username");
 
       expect("GitHub" in obj).toEqual(true);
     });
@@ -13,7 +13,7 @@ describe("Engineer", () => {
     describe("Get Role", () => {
     it("should return an object containing a 'role' property that matches 'Engineer'", () => {
       
-        const obj = new Engineer("employeeName", "ID", "emailAddress", "profile", "Github");
+        const obj = new Engineer("name", "ID", "email", "Github Username");
 
         const role = obj.getRole();
 
@@ -22,12 +22,12 @@ describe("Engineer", () => {
     });
 
     describe("Name", () => {
-    it("should return an object containing 'employeeName' property that matches 'employeeName'", () => {
+    it("should return an object containing 'name' property that matches 'name'", () => {
       
-        const obj = new Engineer("employeeName", "ID", "emailAddress", "profile", "GitHub") ;
-        const Name = obj.employeeName;
+        const obj = new Engineer("name", "ID", "email", "GitHub Username") ;
+        const Name = obj.name;
 
-      expect(Name).toEqual("employeeName");
+      expect(Name).toEqual("name");
     });
 
     });
