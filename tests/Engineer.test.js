@@ -19,7 +19,7 @@ describe("Engineer", () => {
 
       expect (role).toEqual("Engineer");
     });
-  });
+    });
 
     describe("Name", () => {
     it("should return an object containing 'employeeName' property that matches 'employeeName'", () => {
