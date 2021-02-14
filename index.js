@@ -1,8 +1,14 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateMarkdown = require('./utils/generateMarkdown.js');
+const generateHTML = require('./src/generateHtml.js');
+const Employee = 
+const Engineer = 
+const Intern = 
+const Manager = 
 
-const questions = [
+const Team = []
+
+//Questions 
     {   
         type: "input",
         message: "Key in GitHub username",
