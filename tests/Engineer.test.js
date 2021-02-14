@@ -15,7 +15,7 @@ describe("Engineer", () => {
       
         const obj = new Engineer("employeeName", "ID", "emailAddress", "profile", "Github");
 
-      const role = obj.getRole();
+        const role = obj.getRole();
 
       expect (role).toEqual("Engineer");
     });
