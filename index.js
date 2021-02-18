@@ -1,14 +1,20 @@
-const inquirer = require('inquirer');
 const fs = require('fs');
-const generateHTML = require('./src/generateHtml.js');
+const inquirer = require('inquirer');
 const Employee = require('./lib/Employee.js');
 const Engineer = require('./lib/Engineer.js');
 const Intern = require('./lib/Intern.js');
 const Manager = require('./lib/Manager.js');
+const generateHTML = require('./src/generateHtml.js');
 
 const Team = []
 
-//Questions 
+/* questions per class
+refer to test page and build according 
+function getInfo(){
+    inquirer.prompt([{
+
+   }])
+}*/
     {   
         type: "input",
         message: "Key in GitHub username",
@@ -92,7 +98,7 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer.prompt(questions)
     .then((data) =>{
-        writeToFile("README-GENERATOR", generateMarkdown(data));
+        writeToFile("TEAM-PROFILE-GENERATOR", generateHTML(data));
     });
 
 
