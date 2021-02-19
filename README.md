@@ -11,6 +11,13 @@ _A Command Line Interface Application developed to pass a set of tests and gener
 - Questions
 
 ## Installation
+You will need to install the following dependencies: Inquirer & Jest.
+
+_Using this command: npm i_
+
+_To run tests: npm run test_
+
+_To run the application: node index.js_
 
 ## Usage
 
@@ -21,5 +28,5 @@ _A Command Line Interface Application developed to pass a set of tests and gener
 ## Questions
 
 If you would like to reach more to enquire about this application, send here: 
-<a href="mailto: fatima.fakih@hotmail.com.au">Email</a>
+<a href="mailto: fatima.fakih@hotmail.com.au">Fatima Fakih</a>
 
