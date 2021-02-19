@@ -26,7 +26,7 @@ demo gif of how to use
 demo gif of running tests
 
 ## License
-[This application is licensed under ISC. For more information click here](https://opensource.org/licenses/ISC)
+This application is licensed under ISC. For more information click here [License](https://opensource.org/licenses/ISC)
 
 ## Questions
 
