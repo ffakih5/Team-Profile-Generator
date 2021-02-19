@@ -20,10 +20,13 @@ _To run tests: npm run test_
 _To run the application: node index.js_
 
 ## Usage
+demo gif of how to use
 
 ## Tests
+demo gif of running tests
 
 ## License
+[This application is licensed under ISC. For more information click here](https://opensource.org/licenses/ISC)
 
 ## Questions
 
