@@ -1,0 +1,17 @@
+.navbar-brand{
+  position: absolute;
+  left: 0px;
+  height: 40px;
+  background-color: #2C64B4;
+  width: 100%;
+  margin-bottom: 0 auto;
+}
+
+.row{
+    margin-top: 40px;
+    
+}
+span{
+    text-align: center;
+    
+}
