@@ -1,2 +1,2 @@
 # Team-Profile-Generator
-<a href="https://img.shields.io/badge/License-ISC-%232C64B4"></a>
+<img src="https://img.shields.io/badge/License-ISC-%232C64B4" alt="ISC badge">
