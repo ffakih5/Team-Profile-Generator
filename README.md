@@ -1,7 +1,7 @@
 # Team-Profile-Generator <img src="https://img.shields.io/badge/License-ISC-%232C64B4" alt="ISC badge">
 
 ## Description
-_A Command Line Interface Application developed to pass a set of tests and generate a HTML page dedicated to viewing the profiles of a team.
+_A Command Line Interface Application developed to pass a set of tests and generate a HTML page dedicated to viewing the profiles of a team_
 
 ## Table Of Contents
 - Installation
