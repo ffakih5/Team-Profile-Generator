@@ -103,9 +103,8 @@ const managerSelection = [
 function init() {
     inquirer.prompt(mainMenu,managerSelection,engineerSelection,internSelection)
     .then((data) =>{
-        writeToFile("TEAM-PROFILE-GENERATOR", generateHTML(data));
-        (err) =>
-        err ? console.log(err) : console.log("!")
+        writeToFile("TEAM-PROFILE-GENERATOR", generateHTML({ ... inquirerResponses}));
+        
     });
   }
   
