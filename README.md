@@ -20,5 +20,6 @@ _A Command Line Interface Application developed to pass a set of tests and gener
 
 ## Questions
 
-If you would like to reach more to enquire about this application, send here: [Email]<a href="mailto: fatima.fakih@hotmail.com.au"></a>
+If you would like to reach more to enquire about this application, send here: 
+<a href="mailto: fatima.fakih@hotmail.com.au">Email</a>
 
