@@ -1,42 +1,49 @@
-const fs = require('fs');
-const inquirer = require('inquirer');
-const Employee = require('./lib/Employee.js');
-const Engineer = require('./lib/Engineer.js');
-const Intern = require('./lib/Intern.js');
-const Manager = require('./lib/Manager.js');
-const generateHTML = require('./src/generateHtml.js');
+const fs = require("fs");
+const inquirer = require("inquirer");
+const path = require("path");
+const Employee = require("./lib/Employee.js");
+const Engineer = require("./lib/Engineer.js");
+const Intern = require("./lib/Intern.js");
+const Manager = require("./lib/Manager.js");
+const generateHTML = require("./src/generateHtml.js");
 
 const Team = []
 
-/* questions per class
-refer to test page and build according 
-function getInfo(){
-    inquirer.prompt([{
+const mainMenu = {
+    type: "list",
+    message: "Want to add another team member?",
+    choices: ["Add Engineer", "Add Intern", "All done"],
+    name: "selectMainMenu",
+}
 
-   }])
-}*/
+const managerSelection = [
     {   
         type: "input",
-        message: "Key in GitHub username",
-        name: "userName",
+        message: "Manager's name",
+        name: "name",
 
     },
     {   type: "input",
-        message: "Key in Email address",
-        name: "email",
+        message: "Manager's ID",
+        name: "id",
 
     },
 
     {
         type: "input",
-        message: "Key in project title",
-        name: "title",
+        message: "Manager's Email",
+        name: "email",
     },
+
     {   type: "input",
-        message: "Key in a desription of your project",
-        name: "description",
-        
+        message: "Manager's office No.",
+        name: "office",
+    
     },
+
+]
+    
+
     {   type: "input",
         message: "Link to deployed page",
         name: "deployedPage",
@@ -89,7 +96,7 @@ function getInfo(){
 
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, (data), (err) =>
-        err ? console.log(err) : console.log("README is Here!")
+        err ? console.log(err) : console.log("!")
 
     )
 
