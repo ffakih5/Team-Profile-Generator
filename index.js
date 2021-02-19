@@ -96,20 +96,17 @@ const managerSelection = [
     
 
     function writeToFile(fileName, data) {
-    fs.writeFile(fileName, (data), (err) =>
-        err ? console.log(err) : console.log("!")
-
-    )
-
+        return fs.writeFileSync(path.join(process.cwd(),
+        fileName),data); 
 }
 
 function init() {
-    inquirer.prompt(questions)
+    inquirer.prompt(mainMenu,managerSelection,engineerSelection,internSelection)
     .then((data) =>{
         writeToFile("TEAM-PROFILE-GENERATOR", generateHTML(data));
+        (err) =>
+        err ? console.log(err) : console.log("!")
     });
-
-
   }
   
 init();
