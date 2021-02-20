@@ -102,7 +102,7 @@ const managerSelection = [
 
 function init() {
     inquirer.prompt(mainMenu,managerSelection,engineerSelection,internSelection)
-    .then((data) =>{
+    .then((inquirerResponses) =>{
         writeToFile("TEAM-PROFILE-GENERATOR", generateHTML({ ... inquirerResponses}));
         
     });
