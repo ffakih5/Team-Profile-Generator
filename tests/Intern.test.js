@@ -6,7 +6,7 @@ describe("Intern", () => {
     it("should return an object containing a 'profile' property when called with the 'new' keyword", () => {
       const obj = new Intern("name", "ID", "email", "school");
 
-      expect("GitHub" in obj).toEqual(true);
+      expect("School" in obj).toEqual(true);
     });
     });
 
@@ -22,12 +22,12 @@ describe("Intern", () => {
     });
 
     describe("Name", () => {
-    it("should return an object containing 'employeeName' property that matches 'employeeName'", () => {
+    it("should return an object containing 'teamMemberName' property that is equal to the first parameter", () => {
       
-        const obj = new Intern("name", "ID", "email", "school") ;
-        const Name = obj.name;
+        const obj = new Intern("teamMemberName", "ID", "email", "school") ;
+        const name= obj.teamMemberName;
 
-      expect(Name).toEqual("name");
+      expect(name).toEqual("teamMemberName");
     });
 
     });

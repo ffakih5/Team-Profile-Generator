@@ -4,7 +4,7 @@ describe("Engineer", () => {
 
   describe("Initialization", () => {
     it("should return an object containing a 'GithHub' property when called with the 'new' keyword", () => {
-      const obj = new Engineer("name", "ID", "email", "Github Username");
+      const obj = new Engineer("teamMemberName", "ID", "email", "Github Username");
 
       expect("GitHub" in obj).toEqual(true);
     });
@@ -13,7 +13,7 @@ describe("Engineer", () => {
     describe("Get Role", () => {
     it("should return an object containing a 'role' property that matches 'Engineer'", () => {
       
-        const obj = new Engineer("name", "ID", "email", "Github Username");
+        const obj = new Engineer("TeamMemberName", "ID", "email", "Github Username");
 
         const role = obj.getRole();
 
@@ -22,7 +22,7 @@ describe("Engineer", () => {
     });
 
     describe("name", () => {
-    it("should return an object containing 'name' property that matches 'name'", () => {
+    it("should return an object containing 'teamMemberName' property that is equal to the first parameter", () => {
       
         const obj = new Engineer("name", "ID", "email", "GitHub Username") ;
         const name = obj.teamMemberName;
