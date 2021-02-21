@@ -22,9 +22,9 @@ describe("Engineer", () => {
     });
 
     describe("name", () => {
-    it("should return an object containing 'teamMemberName' property that is equal to the first parameter", () => {
+      it("should return an object containing 'teamMemberName' property that is equal to the first parameter", () => {
       
-        const obj = new Engineer("name", "ID", "email", "GitHub Username") ;
+        const obj = new Engineer("teamMemberName", "ID", "email", "GitHub Username") ;
         const name = obj.teamMemberName;
 
       expect(name).toEqual("teamMemberName");

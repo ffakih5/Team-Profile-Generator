@@ -4,7 +4,7 @@ describe("Intern", () => {
 
   describe("Initialization", () => {
     it("should return an object containing a 'profile' property when called with the 'new' keyword", () => {
-      const obj = new Intern("name", "ID", "email", "school");
+      const obj = new Intern("teamMemberName", "ID", "email", "School");
 
       expect("School" in obj).toEqual(true);
     });
@@ -13,7 +13,7 @@ describe("Intern", () => {
     describe("Get Role", () => {
     it("should return an object containing a 'role' property that matches 'Intern'", () => {
       
-        const obj = new Intern("name", "ID", "email", "school",);
+        const obj = new Intern("teamMemberName", "ID", "email", "School",);
 
         const role = obj.getRole();
 
@@ -21,7 +21,7 @@ describe("Intern", () => {
     });
     });
 
-    describe("Name", () => {
+    describe("name", () => {
     it("should return an object containing 'teamMemberName' property that is equal to the first parameter", () => {
       
         const obj = new Intern("teamMemberName", "ID", "email", "school") ;
