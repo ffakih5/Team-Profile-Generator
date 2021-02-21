@@ -9,9 +9,10 @@ function generateHTML(data) {
 
 
 
-    fs.writeFile("index.html") (err) =>
+    fs.writeFile("index.html", index.html, (err) =>
         err ? console.log(err) : console.log("!")
-
-
+        )
 
 }
+
+module.exports = generateHTML
