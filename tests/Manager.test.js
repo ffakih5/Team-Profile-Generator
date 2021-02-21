@@ -22,12 +22,12 @@ describe("Manager", () => {
     });
 
     describe("name", () => {
-    it("should return an object containing 'teamMemberName' property that matches 'teamMemberName'", () => {
+      it("should return an object containing 'teamMemberName' property that is equal to the first parameter", () => {
       
-        const obj = new Manager("name", "employee ID", "email", "office number") ;
-        const teamMemberName = teamMemberName;
+        const obj = new Manager("teamMemberName", "employee ID", "email", "office") ;
+        const name = obj.teamMemberName;
 
-      expect(name).toEqual("teamMemberName");
+        expect(name).toEqual("teamMemberName");
     });
 
     });

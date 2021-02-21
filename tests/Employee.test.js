@@ -1,8 +1,8 @@
 const Employee = require("../lib/Employee.js");
 
-//describe("Employee", () => {
+describe("Employee", () => {
 
- //describe("Initialization", () => {
+  describe("Initialization", () => {
     //it("should return an object containing a 'profile' property when called with the 'new' keyword", () => {
       //const obj = new Employee("name", "ID", "email", "office number");
 
@@ -15,7 +15,7 @@ const Employee = require("../lib/Employee.js");
       
         const obj = new Employee("teamMemberName", "ID", "email", "office number");
 
-      const role = obj.getRole();
+        const role = obj.getRole();
 
       expect (role).toEqual("Employee");
     });
