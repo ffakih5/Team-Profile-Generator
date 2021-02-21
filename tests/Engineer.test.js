@@ -3,7 +3,7 @@ const Engineer = require("../lib/Engineer.js");
 describe("Engineer", () => {
 
   describe("Initialization", () => {
-    it("should return an object containing a 'profile' property when called with the 'new' keyword", () => {
+    it("should return an object containing a 'GithHub' property when called with the 'new' keyword", () => {
       const obj = new Engineer("name", "ID", "email", "Github Username");
 
       expect("GitHub" in obj).toEqual(true);
@@ -21,13 +21,13 @@ describe("Engineer", () => {
     });
     });
 
-    describe("Name", () => {
+    describe("name", () => {
     it("should return an object containing 'name' property that matches 'name'", () => {
       
         const obj = new Engineer("name", "ID", "email", "GitHub Username") ;
-        const Name = obj.name;
+        const name = obj.teamMemberName;
 
-      expect(Name).toEqual("name");
+      expect(name).toEqual("teamMemberName");
     });
 
     });
