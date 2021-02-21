@@ -24,7 +24,7 @@ const managerSelection = [
     {   
         type: "input",
         message: "Manager's name",
-        name: "name",
+        name: "teamMemberName",
 
     },
     {   
@@ -74,7 +74,7 @@ const managerSelection = [
         {
             type: "input",
             message: "Intern's name",
-            name: "name",
+            name: "teamMemberName",
         },
         {
             type: "input",

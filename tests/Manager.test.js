@@ -3,10 +3,10 @@ const Manager = require("../lib/Manager.js");
 describe("Manager", () => {
 
   describe("Initialization", () => {
-    it("should return an object containing a 'profile' property when called with the 'new' keyword", () => {
+    it("should return an object containing a 'office' property when called with the 'new' keyword", () => {
       const obj = new Manager("name", "employee ID", "email", "office number");
 
-      expect("GitHub" in obj).toEqual(true);
+      expect("office" in obj).toEqual(true);
     });
     });
 
@@ -21,13 +21,13 @@ describe("Manager", () => {
     });
     });
 
-    describe("Name", () => {
-    it("should return an object containing 'employeeName' property that matches 'employeeName'", () => {
+    describe("name", () => {
+    it("should return an object containing 'teamMemberName' property that matches 'teamMemberName'", () => {
       
         const obj = new Manager("name", "employee ID", "email", "office number") ;
-        const Name = obj.employeeName;
+        const teamMemberName = teamMemberName;
 
-      expect(Name).toEqual("name");
+      expect(name).toEqual("teamMemberName");
     });
 
     });
