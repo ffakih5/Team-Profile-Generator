@@ -1,4 +1,4 @@
-const fs = require('fs');
+//const fs = require('fs');
 
 const managerCard = function (manager){
     return `
@@ -96,8 +96,8 @@ generateHTML = (data) => {
 
    }
 
-   const generateTeamPage = function(teamCards);
-   return `
+   const generateTeamPage = function(teamCards){
+    return `
     <!DOCTYPE html>
    <html lang="en">
    <head>
@@ -127,9 +127,11 @@ generateHTML = (data) => {
    </html> 
    ` ;
    
-   fs.writeFile('index.html',(err) =>
+   } 
+
+  /* fs.writeFile('index.html',(err) =>
    err ? console.error(err) : console.log('Thank you for using Team Profile Generator!')
    )
+*/
 
-
-module.exports = generateHTML;
+module.exports = generateHTML

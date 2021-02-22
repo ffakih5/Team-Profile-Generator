@@ -7,7 +7,7 @@ const Intern = require("./lib/Intern.js");
 const Manager = require("./lib/Manager.js");
 const generateHTML = require("./src/generateHtml.js");
 
-const Team = []
+const Team = [];
 
 const mainMenu = {
     type: "checkbox",
