@@ -7,7 +7,7 @@ const generateManager = function (manager) {
            </div>
 
            <ul class="list-group-item list-group-flush">
-               <li class="list-group-item">Email: <a href="mailto:${manager.email}"></a>${manager.email}/li>
+               <li class="list-group-item">Email: <a href="mailto:${manager.email}"></a>${manager.email}</li>
                <li class="list-group-item">Employee ID: ${manager.id}</li>
                <li class="list-group-item">Office No: ${manager.office}</li>
            </ul>

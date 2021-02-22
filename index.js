@@ -38,89 +38,79 @@ const teamManager = () => {
         const manager = new Manager (teamMemberName, id, email, office);
 
         Team.push(manager);
-        //console.log(manager);
+        console.log(manager);
     })
 };
 
-const teamEngineer = () => {
+const teamEmployee = () => {
     console.log(`
-    adding Engineer
+    adding employees
     `);
 
     return inquirer.prompt ([
         {
+            type: "list",
+            message: "Employee's role",
+            name: "role",
+            choices: ["Engineer", "Intern"],
+        },
+        {
             type: "input",
-            message: "Engineer's Name",
+            message: "Employee's Name",
             name: "teamMemberName",
         },
         {
             type: "input",
-            message: "Engineer's ID",
+            message: "Employee's ID",
             name: "id",
         },
         {
             type: "input",
-            message: "Engineer's Email",
+            message: "Employee's Email",
             name: "email",
         },
         {
             type: "input",
-            message: "Engineer's GitHub Username",
+            message: "Employee's GitHub Username",
             name: "GitHub",
-        },
-        
-    ])
-    .then(engineerResponse => {
-
-        const {teamMemberName, id, email, GitHub,} = engineerResponse;
-        const engineer = new Engineer (teamMemberName, id, email, GitHub);
-
-        Team.push(engineer);
-
-
-        Team.push(teamMember);
-
-});
-}
-
-const teamIntern = () => {
-    console.log(`
-    adding Intern
-    `);
-
-    return inquirer.prompt ([
-        {
-            type: "input",
-            message: "Intern's Name",
-            name: "teamMemberName",
-        },
-        {
-            type: "input",
-            message: "Intern's ID",
-            name: "id",
-        },
-        {
-            type: "input",
-            message: "Intern's Email",
-            name: "email",
         },
         {
             type: "input",
             message: "Intern's School",
             name: "School",
         },
+        {
+            type: "confirm",
+            message: "Want to add more team members?",
+            name: "confirmTeamEmployee",
+        },
 
-    ]).then (internResponse => {
+    ])
+    .then(teamData => {
 
-        const {teamMemberName, id, email, School,} = internResponse;
-        const engineer = new Engineer (teamMemberName, id, email, GitHub);
+        let {teamMemberName, id, email, role, GitHub, School, confirmTeamEmployee} = teamData;
+        let teamMember;
 
-        Team.push(engineer);
+        if (role === "Engineer"){
+            teamMember = new Engineer (teamMemberName, id, email, GitHub);
+            
+            console.log(teamMember);
 
+        } else if (role === "Intern") {
+            teamMember = new Intern (teamMemberName, id, email, School);
 
+            console.log(teamMember);
+        }
         Team.push(teamMember);
-   
-    });
+
+        if (confirmTeamEmployee) {
+            return teamEmployee(Team);
+        } else {
+            return Team;
+        }
+    })
+
+};
 
 
 const writeFile = data => {
@@ -136,8 +126,7 @@ const writeFile = data => {
 };
 
 teamManager()
-.then(teamEngineer)
-.then(teamIntern)
+.then(teamEmployee)
 .then(Team => {
     return generateHTML(Team);
 })
