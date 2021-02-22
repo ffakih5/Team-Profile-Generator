@@ -1,11 +1,12 @@
-const fs = require("fs");
-const inquirer = require("inquirer");
-const path = require("path");
-const Employee = require("./lib/Employee.js");
+const generateHTML = require("./src/generateHtml.js");
+
+const Manager = require("./lib/Manager.js");
 const Engineer = require("./lib/Engineer.js");
 const Intern = require("./lib/Intern.js");
-const Manager = require("./lib/Manager.js");
-const generateHTML = require("./src/generateHtml.js");
+
+const fs = require("fs");
+const inquirer = require("inquirer");
+
 
 const Team = [];
 
@@ -14,7 +15,7 @@ const teamManager = () => {
         {
             type: "input",
             message: "Manager's name",
-            name: "teamMembersName",
+            name: "teamMemberName",
         },
         {   
             type: "input",
@@ -100,6 +101,7 @@ const teamEmployee = () => {
 
             console.log(teamMember);
         }
+        
         Team.push(teamMember);
 
         if (confirmTeamEmployee) {

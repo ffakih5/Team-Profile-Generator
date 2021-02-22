@@ -1,8 +1,8 @@
-const managerCard = function (manager){
+const generateManager = function (manager) {
     return `
     <div class="card-col">
            <div class="card-body card-header">
-               <h5 ${manager.name} </h5> 
+               <h5 class="card-title">${manager.teamMemberName} </h5> 
                <h6 class="card-subtitle mb-2 text-muted">Manager  <i class="fas fa-coffee"></i></h6>
            </div>
 
@@ -16,11 +16,11 @@ const managerCard = function (manager){
 
 }
 
-const engineerCard = function (engineer) {
+const generateEngineer = function (engineer) {
     return `
     <div class="card-col">
            <div class="card-body card-header">
-               <h5 class="card-title">${engineer.name}</h5>
+               <h5 class="card-title">${engineer.teamMemberName}</h5>
                <h6 class="card-subtitle mb-2 text-muted">Engineer  <i class="fas fa-glasses"></i></h6>
            </div>
 
@@ -33,7 +33,7 @@ const engineerCard = function (engineer) {
 
         <div class="card-col">
         <div class="card-body card-header">
-            <h5 class="card-title">${engineer.name}</h5>
+            <h5 class="card-title">${engineer.teamMemberName}</h5>
             <h6 class="card-subtitle mb-2 text-muted">Engineer  <i class="fas fa-glasses"></i></h6>
         </div>
 
@@ -47,18 +47,18 @@ const engineerCard = function (engineer) {
     `;
 }
 
-const internCard = function (intern) {
+const generateIntern = function (intern) {
     return`
     <div class="card-col">
     <div class="card-body card-header">
-        <h5 class="card-title">${intern.name}</h5>
+        <h5 class="card-title">${intern.teamMemberName}</h5>
         <h6 class="card-subtitle mb-2 text-muted">Intern  <i class="fas fa-user-graduate"></i></h6>
     </div>
 
     <ul class="list-group-item list-group-flush">
         <li class="list-group-item">Email: <a href="mailto:${intern.email}"></a>${intern.email}</li>
         <li class="list-group-item">Employee ID: ${intern.id}</li>
-        <li class="list-group-item">School : ${intern.school}</li>
+        <li class="list-group-item">School : ${intern.School}</li>
     </ul>
  </div> `;
 
@@ -72,20 +72,20 @@ const internCard = function (intern) {
         const teamMember = data[i];
         const teamRole = teamMember.getRole();
  
-        if (teamMember.role === "Manager") {
-            const generateManager = managerCard(teamMember);
+        if (teamRole === "Manager") {
+            const managerCard = generateManager(teamMember);
             
-            teamArray.push(generateManager)
+            teamArray.push(managerCard)
         }
-        if (teamMember.role === "Engineer") {
-            const generateEngineer = engineerCard(teamMember);
+        if (teamRole === "Engineer") {
+            const engineerCard = generateEngineer(teamMember);
  
-            teamArray.push(generateEngineer);
+            teamArray.push(engineerCard);
         }
-        if (teamMember.role === "Intern") {
-            const generateIntern = internCard(teamMember);
+        if (teamRole === "Intern") {
+            const internCard = generateIntern(teamMember);
  
-            teamArray.push(generateIntern);
+            teamArray.push(internCard);
         }
      }
      const teamCards = teamArray.join("");
