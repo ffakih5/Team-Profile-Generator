@@ -1,5 +1,3 @@
-//const fs = require('fs');
-
 const managerCard = function (manager){
     return `
     <div class="card-col">
@@ -66,35 +64,36 @@ const internCard = function (intern) {
 
 }
 
-const generateHTML = (data) => {
-   teamArray = [];
-  
-   for(let i=0; i < data.length; i++){
-       const teamMember = data[i];
-       const teamRole = teamRole.getRole();
+ generateHTML = (data) => {
 
-       if (teamRole === "Manager") {
-           const generateManager = managerCard(teamMember);
-           
-           teamArray.push(generateManager)
-       }
-       else if (teamRole === "Engineer") {
-           const generateEngineer = engineerCard(teamMember);
-
-           teamArray.push(generateEngineer);
-       }
-       else (teamRole === "Intern")
-           const generateIntern = internCard(teamMember);
-
-           teamArray.push(generateIntern);
-       }
-
-       const teamCards = teamArray.join("");
-
-       const generateTeam = generateTeamPage(teamCards);
-       return generateTeam;
-
-   }
+    teamArray = [];
+   
+    for (let i = 0; i < data.length; i++) {
+        const teamMember = data[i];
+        const teamRole = teamMember.getRole();
+ 
+        if (teamMember.role === "Manager") {
+            const generateManager = managerCard(teamMember);
+            
+            teamArray.push(generateManager)
+        }
+        if (teamMember.role === "Engineer") {
+            const generateEngineer = engineerCard(teamMember);
+ 
+            teamArray.push(generateEngineer);
+        }
+        if (teamMember.role === "Intern") {
+            const generateIntern = internCard(teamMember);
+ 
+            teamArray.push(generateIntern);
+        }
+     }
+     const teamCards = teamArray.join("");
+ 
+     const generateTeam = generateTeamPage(teamCards);
+     return generateTeam;
+ 
+ }
 
    const generateTeamPage = function(teamCards){
     return `
@@ -117,7 +116,7 @@ const generateHTML = (data) => {
    
        <main class="container">
            <div class="row">
-           ${teamCards}
+                ${teamCards}
            </div>
        </main>
    
@@ -125,13 +124,12 @@ const generateHTML = (data) => {
        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
    </body>
    </html> 
+
+   
    ` ;
+
 
    } 
 
-  /* fs.writeFile('index.html',(err) =>
-   err ? console.error(err) : console.log('Thank you for using Team Profile Generator!')
-   )
-*/
-
-module.exports = generateHTML
+ 
+module.exports = generateHTML;
