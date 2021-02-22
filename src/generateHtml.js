@@ -66,12 +66,12 @@ const internCard = function (intern) {
 
 }
 
-generateHTML = (data) => {
+const generateHTML = (data) => {
    teamArray = [];
   
    for(let i=0; i < data.length; i++){
        const teamMember = data[i];
-       const teamRole = teamMember.getRole();
+       const teamRole = teamRole.getRole();
 
        if (teamRole === "Manager") {
            const generateManager = managerCard(teamMember);
@@ -126,7 +126,7 @@ generateHTML = (data) => {
    </body>
    </html> 
    ` ;
-   
+
    } 
 
   /* fs.writeFile('index.html',(err) =>
