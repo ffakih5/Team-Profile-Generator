@@ -113,10 +113,11 @@ const teamIntern = () => {
     ]).then (internResponse => {
 
         const {teamMemberName, id, email, School,} = internResponse;
-        const intern = new Intern (teamMemberName, id, email, School);
+        const engineer = new Engineer (teamMemberName, id, email, GitHub);
 
-        Team.push(intern);
-        
+        Team.push(engineer);
+
+
         Team.push(teamMember);
    
     });
