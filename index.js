@@ -38,7 +38,7 @@ const teamManager = () => {
         const manager = new Manager (teamMemberName, id, email, office);
 
         Team.push(manager);
-        console.log(manager);
+        console.log("adding Manager");
     })
 };
 
