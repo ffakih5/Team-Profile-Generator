@@ -94,17 +94,75 @@ const managerSelection = [
     
      ];
     
-function writeToFile(fileName, data) {
-        return fs.writeFileSync(path.join(process.cwd(),
-        fileName),data); 
+function main () {
+    inquirer    
+        .prompt (mainMenu)
+            .then((data) => { 
+                if (data.mainMenu === "Add Engineer") {
+                    console.log("Adding Engineer :)");
+                    plusEngineer();
+                } else if (data.mainMenu === "Add Intern"){
+                    console.log("Adding an intern :)");
+                    plusIntern();
+                } else {
+                    generateHTML(Team);
+                    console.log("Here's your team!");
+
+                }
+            });           
 }
 
+function plusManager () {
+    inquirer
+        .prompt(managerSelection)
+            .then((data) => {
+                const Manager = new Manager(data.teamMemberName, data.id, data.email, data.office);
+                plusTeam(Manager);
+                main();
+            });
+}
+
+function plusEngineer (){
+    inquirer
+        .prompt(engineerSelection)
+            .then((data) => {
+                const Engineer = new Engineer(data.teamMemberName, data.id, data.email,data.GitHub);
+                plusTeam(Engineer);
+                main();
+            });
+}
+
+function plusIntern(details) {
+    inquirer
+        .prompt(internSelection)
+            .then((data) => { 
+                const Intern = new Intern(data.teamMemberName, data.id, data.email,data.School);
+                plusTeam(Intern);
+                main();
+            });
+
+}
+
+function plusTeam(details) {
+    let object = {};
+    object["name"] = details.teamMemberName;
+    object["role"] = details.getRole();
+    object["id"] = details.id;
+    object["email"] = details.email;
+    if (object["role"] === "Manager"){
+        object["office"] = details.office;
+    } else if(object["role"] === "Engineer") {
+        object["GitHub"] = details.GitHub;
+    } else if(object ["role"] === "Intern"){
+        object["School"] = details.School
+    }
+    Team.push(object);
+}
+
+
 function init() {
-    inquirer.prompt(mainMenu,managerSelection,engineerSelection,internSelection)
-    .then((inquirerResponses) =>{
-        writeToFile("TEAM-PROFILE-GENERATOR", generateHTML({ ... inquirerResponses}));
-        
-    });
+    console.log("Hi, to begin building your team press enter");
+    plusManager();
   }
   
 init();
