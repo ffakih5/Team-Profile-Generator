@@ -44,15 +44,10 @@ const teamManager = () => {
 
 const teamEngineer = () => {
     console.log(`
-    adding engineer
+    adding Engineer
     `);
 
     return inquirer.prompt ([
-        {
-            type: "input",
-            message: "Engineer's role",
-            name: "role",
-        },
         {
             type: "input",
             message: "Engineer's Name",
@@ -73,13 +68,11 @@ const teamEngineer = () => {
             message: "Engineer's GitHub Username",
             name: "GitHub",
         },
-
-
         
     ])
     .then(engineerResponse => {
 
-        const {teamMemberName, id, email, role, GitHub, School, confirmTeamEmployee} = engineerResponse;
+        const {teamMemberName, id, email, GitHub,} = engineerResponse;
         const engineer = new Engineer (teamMemberName, id, email, GitHub);
 
         Team.push(engineer);
@@ -87,14 +80,46 @@ const teamEngineer = () => {
 
         Team.push(teamMember);
 
-        
-        
-    
-        
-        
-        
+});
+}
 
-};
+const teamIntern = () => {
+    console.log(`
+    adding Intern
+    `);
+
+    return inquirer.prompt ([
+        {
+            type: "input",
+            message: "Intern's Name",
+            name: "teamMemberName",
+        },
+        {
+            type: "input",
+            message: "Intern's ID",
+            name: "id",
+        },
+        {
+            type: "input",
+            message: "Intern's Email",
+            name: "email",
+        },
+        {
+            type: "input",
+            message: "Intern's School",
+            name: "School",
+        },
+
+    ]).then (internResponse => {
+
+        const {teamMemberName, id, email, School,} = internResponse;
+        const intern = new Intern (teamMemberName, id, email, School);
+
+        Team.push(intern);
+        
+        Team.push(teamMember);
+   
+    });
 
 
 const writeFile = data => {
