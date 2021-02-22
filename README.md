@@ -3,6 +3,8 @@
 ## Description
 _A Command Line Interface Application developed to pass a set of tests and generate a HTML page dedicated to viewing the profiles of a team_
 
+[Check it out here]( https://ffakih5.github.io/Team-Profile-Generator/.)
+
 ## Table Of Contents
 - Installation
 - Usage
