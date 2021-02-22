@@ -2,8 +2,9 @@ const fs = require('fs');
 
 function generateHTML(data) {
    const teamCards = ""
-   `
-   <div class="card-col">
+   console.log(data);
+   
+  ` <div class="card-col">
    <div class="card-body card-header">
        <h5 class="card-title">Priyanka </h5> 
        <h6 class="card-subtitle mb-2 text-muted">Manager  <i class="fas fa-coffee"></i></h6>
@@ -46,7 +47,7 @@ function generateHTML(data) {
        <li class="list-group-item">Employee ID: #042679</li>
        <li class="list-group-item">School : UTS</li>
    </ul>
-</div>`
+</div> `
 
     let teamHtml = `
     <!DOCTYPE html>

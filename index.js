@@ -106,6 +106,7 @@ function main () {
                     plusIntern();
                 } else {
                     generateHTML(Team);
+                    console.log(Team);
                     console.log("Here's your team!");
 
                 }
@@ -116,8 +117,8 @@ function plusManager () {
     inquirer
         .prompt(managerSelection)
             .then((data) => {
-                const Manager = new Manager(data.teamMemberName, data.id, data.email, data.office);
-                plusTeam(Manager);
+                const manager = new Manager(data.teamMemberName, data.id, data.email, data.office);
+                plusTeam(manager);
                 main();
             });
 }
@@ -126,8 +127,8 @@ function plusEngineer (){
     inquirer
         .prompt(engineerSelection)
             .then((data) => {
-                const Engineer = new Engineer(data.teamMemberName, data.id, data.email,data.GitHub);
-                plusTeam(Engineer);
+                const engineer = new Engineer(data.teamMemberName, data.id, data.email,data.GitHub);
+                plusTeam(engineer);
                 main();
             });
 }
@@ -136,8 +137,8 @@ function plusIntern(details) {
     inquirer
         .prompt(internSelection)
             .then((data) => { 
-                const Intern = new Intern(data.teamMemberName, data.id, data.email,data.School);
-                plusTeam(Intern);
+                const intern = new Intern(data.teamMemberName, data.id, data.email,data.School);
+                plusTeam(intern);
                 main();
             });
 
